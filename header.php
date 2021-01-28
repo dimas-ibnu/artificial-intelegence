@@ -39,7 +39,7 @@
 </head>
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+  <header id="header" class="fixed-top d-flex align-items-center" >
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
@@ -54,12 +54,11 @@
           <li><a href="#about">About</a></li>
           <li><a href="foward.php">Foward Chaining</a></li>
           <li><a href="backward.php">Backward Chaining</a></li>
-          <li class="drop-down"><a href="">Pengaturan</a>
+          <li class="drop-down"><a href="">Machine Learning</a>
             <ul>
-              <li><a href="form/add-gejala.php">Tambah Gejala - Foward</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
+              <li><a href="#">Fuzzy Logic</a></li>
+              <li><a href="knn.php">Knearest Neighbor</a></li>
+              <li><a href="#">Naive Bayes</a></li>
             </ul>
           </li>
         </ul>

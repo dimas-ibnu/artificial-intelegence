@@ -1,4 +1,4 @@
-<?php include "header.php" ?>
+<?php include_once "header.php" ?>
 
 <body>
     <section id="hero" class="d-flex flex-column justify-content-end align-items-center">

@@ -1,4 +1,4 @@
-<?php include "header.php"?>
+<?php include_once "header.php";?>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
@@ -12,6 +12,7 @@
 
             <?php
            include "connect_foward.php";
+require_once "parser-php-version.php";
 
             $answer    = $_GET['answer'];
             if ($answer != '') {
