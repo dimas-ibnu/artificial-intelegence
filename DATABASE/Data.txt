@@ -1,0 +1,25 @@
+NAMA PENYAKIT:
+1. Blefaritis
+2. Dermatitis Palpebra
+3. Edema Palpebra Infla
+
+JENIS GEJALA:
+1. Alergi
+2. Sekret Konjungtiva
+3. Digigit Serangga
+4. Peradangan Mata
+5. Gatal
+6. Glaukoma
+
+ATURAN/RULE:
+R1. IF Alergi AND Sekret Konjungtiva THEN Dermatitis Palpebra
+
+R2. IF Alergi AND Digigit Serangga THEN Kemerahan
+
+R3. IF Alergi AND Peradangan Mata AND Gatal THEN Edema Palpebra Infla
+
+R4. IF Alergi AND Gatal AND Glaukoma THEN Blefaritis
+
+R5. IF Peradangan Mata THEN Gatal
+
+R6. IF Digigit Serangga AND Kemerahan THEN Peradangan Mata
