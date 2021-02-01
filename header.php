@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - Alopakar</title>
+  <title>Dashboard - Predicty</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -43,7 +43,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.php">Alopakar</a></h1>
+        <h1 class="text-light"><a href="index.php">Predicty</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -52,13 +52,18 @@
         <ul>
           <li class="active"><a href="index.php">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="foward.php">Foward Chaining</a></li>
-          <li><a href="backward.php">Backward Chaining</a></li>
+          <li class="drop-down"><a href="">Sistem Pakar</a>
+            <ul>
+              <li><a href="foward.php">Foward Chaining</a></li>
+              <li><a href="backward.php">Backward Chaining</a></li>
+            </ul>
+          </li>
           <li class="drop-down"><a href="">Machine Learning</a>
             <ul>
               <li><a href="#">Fuzzy Logic</a></li>
               <li><a href="knn.php">Knearest Neighbor</a></li>
-              <li><a href="#">Naive Bayes</a></li>
+              <li><a href="naive_bayes.php">Naive Bayes</a></li>
+              <li><a href="#">KMeans</a></li>
             </ul>
           </li>
         </ul>
