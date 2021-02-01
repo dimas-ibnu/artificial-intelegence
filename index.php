@@ -40,6 +40,17 @@
         </div>
       </div>
 
+      <!-- Slide 4 -->
+
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">K-Means</h2>
+          <p class="animate__animated animate__fadeInUp">Pengelompokan K-means adalah jenis pembelajaran tanpa pengawasan, yang digunakan ketika Anda memiliki data yang tidak berlabel (yaitu, data tanpa kategori atau grup yang ditentukan). Tujuan dari algoritma ini adalah untuk menemukan kelompok dalam data, dengan jumlah kelompok yang diwakili oleh variabel K. Algoritma ini bekerja secara iteratif untuk menetapkan setiap titik data ke salah satu kelompok K berdasarkan fitur yang disediakan. Titik data dikelompokkan berdasarkan kesamaan fitur
+          </p>
+          <a href="kmeans.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+        </div>
+      </div>
+
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>

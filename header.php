@@ -51,7 +51,7 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.php">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#">Water Glass Problem</a></li>
           <li class="drop-down"><a href="">Sistem Pakar</a>
             <ul>
               <li><a href="foward.php">Foward Chaining</a></li>
@@ -63,7 +63,7 @@
               <li><a href="#">Fuzzy Logic</a></li>
               <li><a href="knn.php">Knearest Neighbor</a></li>
               <li><a href="naive_bayes.php">Naive Bayes</a></li>
-              <li><a href="#">KMeans</a></li>
+              <li><a href="kmeans.php">KMeans</a></li>
             </ul>
           </li>
         </ul>
