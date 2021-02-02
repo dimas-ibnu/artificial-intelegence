@@ -19,14 +19,12 @@ error_reporting(0);
 //include_once "parser-php-version.php"; OPSI 2
 //require_once ("parser-php-version.php"); OPSI 3
 //include_once ("parser-php-version.php"); OPSI 4
-// require_once "parser-php-version.php";
+require_once "parser-php-version.php";
 //END KONVERSI VERSI PHP KE PHP 7 OTOMATIS
 
 $server = "localhost";
 $username = "dimas";
 $password = "";
 $database = "db_foward_chaining";
-$connect = mysqli_connect($server, $username, $password, $database, 3306);
-if (mysqli_connect_errno()) {
-	echo "Failed to Connect to Mysql : " . mysqli_connect_error();
-}
+mysql_connect($server, $username, $password) or die("Gagal");
+mysql_select_db($database) or die("Database tidak ditemukan");
