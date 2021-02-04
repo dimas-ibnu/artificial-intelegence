@@ -1,0 +1,34 @@
+{
+    "name": "loilo/fuse",
+    "description": "Fuzzy search for PHP based on Bitap algorithm",
+    "type": "library",
+    "version": "4.0.0",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Florian Reuschel",
+            "email": "florian@loilo.de"
+        }
+    ],
+    "require": {
+        "php": "^7.3 || ^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fuse\\": "src/"
+        },
+        "files": [
+            "src/Bitap/matched_indices.php",
+            "src/Bitap/pattern_alphabet.php",
+            "src/Bitap/regex_search.php",
+            "src/Bitap/score.php",
+            "src/Bitap/search.php",
+            "src/Helpers/deep_value.php",
+            "src/Helpers/get.php",
+            "src/Helpers/is_list.php"
+        ]
+    }
+}

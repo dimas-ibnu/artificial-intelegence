@@ -1,5 +1,6 @@
 {
     "require": {
-        "php-ai/php-ml": "^0.9.0"
+        "php-ai/php-ml": "^0.9.0",
+        "loilo/fuse": "^4.0"
     }
 }
