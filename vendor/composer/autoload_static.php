@@ -6,41 +6,35 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitd16713f9a591cd3575007a37b34bb06e
 {
-    public static $files = array (
-        '5a6c01c6b890a6f9e22f6a75f33535c3' => __DIR__ . '/..' . '/loilo/fuse/src/Bitap/matched_indices.php',
-        'cb0217d87bec02191ba2d2597c16f1a7' => __DIR__ . '/..' . '/loilo/fuse/src/Bitap/pattern_alphabet.php',
-        '07e8a1a5effbc28d6b452bec2948bb65' => __DIR__ . '/..' . '/loilo/fuse/src/Bitap/regex_search.php',
-        'd28900056f66e13fa4e269caa8a4cd1c' => __DIR__ . '/..' . '/loilo/fuse/src/Bitap/score.php',
-        '7679d68ce06dec48d343f560108145d2' => __DIR__ . '/..' . '/loilo/fuse/src/Bitap/search.php',
-        'ae18f0d7f1399203de0fc444e860fdd9' => __DIR__ . '/..' . '/loilo/fuse/src/Helpers/deep_value.php',
-        'ea2171ac7e455f713fa8445ea3919da7' => __DIR__ . '/..' . '/loilo/fuse/src/Helpers/get.php',
-        '59ff57762b50378bb54688b7561c609b' => __DIR__ . '/..' . '/loilo/fuse/src/Helpers/is_list.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Techarea\\Phuzzy\\' => 16,
+        ),
         'P' => 
         array (
             'Phpml\\' => 6,
         ),
-        'F' => 
-        array (
-            'Fuse\\' => 5,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Techarea\\Phuzzy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/techarea/phuzzy/src',
+        ),
         'Phpml\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-ai/php-ml/src',
         ),
-        'Fuse\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/loilo/fuse/src',
-        ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/reyzeal/fuzzy',
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'geoPHP' => __DIR__ . '/..' . '/phayes/geophp/geoPHP.inc',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -48,6 +42,7 @@ class ComposerStaticInitd16713f9a591cd3575007a37b34bb06e
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitd16713f9a591cd3575007a37b34bb06e::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitd16713f9a591cd3575007a37b34bb06e::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitd16713f9a591cd3575007a37b34bb06e::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInitd16713f9a591cd3575007a37b34bb06e::$classMap;
 
         }, null, ClassLoader::class);

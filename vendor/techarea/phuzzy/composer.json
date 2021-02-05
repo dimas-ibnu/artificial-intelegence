@@ -1,0 +1,27 @@
+{
+	"name": "techarea/phuzzy",
+	"type": "library",
+	"description": "Phuzzy adalah sebuah library PHP untuk algoritma fuzzy",
+	"keywords": ["phuzzy", "fuzzy"],
+	"homepage": "https://github.com/techarealab/phuzzy",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Muhamad Aris",
+			"email": "aris@techarea.co.id",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.6.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.0.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Techarea\\Phuzzy\\": "src"
+		}
+	},
+	"minimum-stability": "stable"
+}

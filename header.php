@@ -60,7 +60,7 @@
           </li>
           <li class="drop-down"><a href="">Machine Learning</a>
             <ul>
-              <li><a href="#">Fuzzy Logic</a></li>
+              <li><a href="fuzzy.php">Fuzzy Logic</a></li>
               <li><a href="knn.php">Knearest Neighbor</a></li>
               <li><a href="naive_bayes.php">Naive Bayes</a></li>
               <li><a href="kmeans.php">KMeans</a></li>

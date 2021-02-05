@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Techarea\\Phuzzy\\' => array($vendorDir . '/techarea/phuzzy/src'),
     'Phpml\\' => array($vendorDir . '/php-ai/php-ml/src'),
-    'Fuse\\' => array($vendorDir . '/loilo/fuse/src'),
+    '' => array($vendorDir . '/reyzeal/fuzzy'),
 );

@@ -4,60 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a5a598eb44a72fb1da21381a24e35f4",
+    "content-hash": "d73cf35fd88fdcd3074468ef46631254",
     "packages": [
         {
-            "name": "loilo/fuse",
-            "version": "4.0.0",
+            "name": "phayes/geophp",
+            "version": "1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/loilo/Fuse.git",
-                "reference": "108cb7fb1375c84c92a5ce06419c3e893fd59683"
+                "url": "https://github.com/phayes/geoPHP.git",
+                "reference": "015404e85b602e0df1f91441f8db0f9e98f7e567"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loilo/Fuse/zipball/108cb7fb1375c84c92a5ce06419c3e893fd59683",
-                "reference": "108cb7fb1375c84c92a5ce06419c3e893fd59683",
+                "url": "https://api.github.com/repos/phayes/geoPHP/zipball/015404e85b602e0df1f91441f8db0f9e98f7e567",
+                "reference": "015404e85b602e0df1f91441f8db0f9e98f7e567",
                 "shasum": ""
             },
-            "require": {
-                "php": "^7.3 || ^8.0"
-            },
             "require-dev": {
-                "phpunit/phpunit": "^8.0 || ^9.0"
+                "phpunit/phpunit": "4.1.*"
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Fuse\\": "src/"
-                },
-                "files": [
-                    "src/Bitap/matched_indices.php",
-                    "src/Bitap/pattern_alphabet.php",
-                    "src/Bitap/regex_search.php",
-                    "src/Bitap/score.php",
-                    "src/Bitap/search.php",
-                    "src/Helpers/deep_value.php",
-                    "src/Helpers/get.php",
-                    "src/Helpers/is_list.php"
+                "classmap": [
+                    "geoPHP.inc"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "Apache-2.0"
+                "GPL-2 or New-BSD"
             ],
             "authors": [
                 {
-                    "name": "Florian Reuschel",
-                    "email": "florian@loilo.de"
+                    "name": "Patrick Hayes"
                 }
             ],
-            "description": "Fuzzy search for PHP based on Bitap algorithm",
+            "description": "GeoPHP is a open-source native PHP library for doing geometry operations. It is written entirely in PHP and can therefore run on shared hosts. It can read and write a wide variety of formats: WKT (including EWKT), WKB (including EWKB), GeoJSON, KML, GPX, GeoRSS). It works with all Simple-Feature geometries (Point, LineString, Polygon, GeometryCollection etc.) and can be used to get centroids, bounding-boxes, area, and a wide variety of other useful information.",
+            "homepage": "https://github.com/phayes/geoPHP",
             "support": {
-                "issues": "https://github.com/loilo/Fuse/issues",
-                "source": "https://github.com/loilo/Fuse/tree/v4.0.0"
+                "issues": "https://github.com/phayes/geoPHP/issues",
+                "source": "https://github.com/phayes/geoPHP/tree/master"
             },
-            "time": "2021-01-05T07:42:38+00:00"
+            "time": "2014-12-02T06:11:22+00:00"
         },
         {
             "name": "php-ai/php-ml",
@@ -115,12 +102,104 @@
                 "issues": "https://gitlab.com/api/v4/projects/19024967/issues"
             },
             "time": "2020-05-27T09:52:59+00:00"
+        },
+        {
+            "name": "reyzeal/fuzzy",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reyzeal/fuzzy.git",
+                "reference": "5f44c36afccd414f56fe071a551d6143369930c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reyzeal/fuzzy/zipball/5f44c36afccd414f56fe071a551d6143369930c2",
+                "reference": "5f44c36afccd414f56fe071a551d6143369930c2",
+                "shasum": ""
+            },
+            "require": {
+                "phayes/geophp": "^1.2"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rizal Ardhi Rahmadani",
+                    "email": "rizal.ardhi.rahmadani@gmail.com"
+                }
+            ],
+            "description": "PHP Fuzzy",
+            "support": {
+                "issues": "https://github.com/reyzeal/fuzzy/issues",
+                "source": "https://github.com/reyzeal/fuzzy/tree/master"
+            },
+            "time": "2019-07-25T09:11:14+00:00"
+        },
+        {
+            "name": "techarea/phuzzy",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/techarealab/phuzzy.git",
+                "reference": "0a4239672efb056f9be19da6589c988745df5ade"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/techarealab/phuzzy/zipball/0a4239672efb056f9be19da6589c988745df5ade",
+                "reference": "0a4239672efb056f9be19da6589c988745df5ade",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Techarea\\Phuzzy\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muhamad Aris",
+                    "email": "aris@techarea.co.id",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Phuzzy adalah sebuah library PHP untuk algoritma fuzzy",
+            "homepage": "https://github.com/techarealab/phuzzy",
+            "keywords": [
+                "fuzzy",
+                "phuzzy"
+            ],
+            "support": {
+                "issues": "https://github.com/techarealab/phuzzy/issues",
+                "source": "https://github.com/techarealab/phuzzy/tree/master"
+            },
+            "time": "2017-05-04T09:36:45+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "reyzeal/fuzzy": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
