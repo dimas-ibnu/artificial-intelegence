@@ -121,7 +121,7 @@ $classifier->train($samples, $labels);
             </tbody>
         </table>
 
-        <a href="https://www.advernesia.com/blog/data-science/pengertian-dan-cara-kerja-algoritma-k-nearest-neighbours-knn/" target="_blank">Sumber data sets</a>
+        <a href="https://www.kitainformatika.com/2020/04/contoh-hitung-manual-excel-algoritma.html" target="_blank">Sumber data sets</a>
 
     </div>
 </section>
