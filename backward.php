@@ -1,50 +1,7 @@
 <?php
-
-use Phpml\Clustering\FuzzyCMeans;
-
 include_once "header.php";
 include_once "connect_backward.php";
-$hasil = $_GET['hasil'];
 
-?>
-
-<?php
-function getHasil($connect, $hasil)
-{
-    $kode_penyakit = $_GET['penyakit'];
-    $sql = "SELECT `nama_penyakit`, `keterangan` FROM `penyakit` WHERE `kode`='{$kode_penyakit}'";
-    $result = $connect->query($sql);
-    $row = $result->fetch_row();
-
-    if ($hasil == "true") {
-        echo "<h4>Gejala {$row[0]} ditemukan dengan Keterangan :</h4>";
-        echo "<div class='text-left'>{$row[1]}</div>";
-        echo "<br><a href='?' class='btn btn-primary'>Konsultasi Lagi</a>";
-    } elseif ($hasil == "false") {
-        echo "<h4>Penyakit {$row[0]} tidak sesuai dengan gejala-gelaja yang anda alami.</h4>";
-        echo "<br><a href='?' class='btn btn-primary'>Konsultasi Lagi</a>";
-    } else {
-        echo "<h5>Silahkan Pilih Salah Satu Penyakit Terlebih Dulu</h5>";
-    }
-}
-
-function getPenyakit($connect)
-{
-
-    $sql = "SELECT `kode`, `nama_penyakit`, `keterangan` FROM `penyakit`";
-    $result = $connect->query($sql);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            // echo "<li><a href=\"?selected={$row['kode']}\" class='dropdown-item'>{$row['nama_penyakit']} </a></li>";
-            echo "<a class='list-group-item list-group-item-action btn-outline-primary' id='list-home-list' data-bs-toggle='list' href='?selected={$row['kode']}#{$row['kode']}' role='tab' aria-controls='home'><b>{$row['nama_penyakit']}</b></a>";
-        }
-    } else {
-        echo "Data kosong";
-    }
-}
-
-// var_dump($kode_penyakit);
 ?>
 
 <body>
@@ -56,7 +13,23 @@ function getPenyakit($connect)
                     <h2>Backward Chaining</h2>
                     <div class="foward" style="background-color: white; margin: 2   rem; padding: 1rem 2rem; border-radius: 10px">
                         <?php
-                        getHasil($connect, $hasil);
+                        $hasil = $_GET['hasil'];
+                        $kode_penyakit = $_GET['penyakit'];
+                        $sql = "SELECT `nama_penyakit`, `keterangan` FROM `penyakit` WHERE `kode`='{$kode_penyakit}'";
+                        $result = $connect->query($sql);
+                        $row = $result->fetch_row();
+
+                        if ($hasil == "true") {
+                            echo "<h4>Gejala {$row[0]} ditemukan dengan Keterangan :</h4>";
+                            echo "<div class='text-left'>{$row[1]}</div>";
+                            echo "<br><a href='?' class='btn btn-primary'>Konsultasi Lagi</a>";
+                        } elseif($hasil == "false"){
+                            echo "<h4>Penyakit {$row[0]} tidak sesuai dengan gejala-gelaja yang anda alami.</h4>";
+                            echo "<br><a href='?' class='btn btn-primary'>Konsultasi Lagi</a>";
+                        } else {
+                            echo "<h5>Silahkan Pilih Salah Satu Penyakit Terlebih Dulu</h5>";
+                        }
+                        // var_dump($kode_penyakit);
                         ?>
                     </div>
                 </div>
@@ -74,7 +47,17 @@ function getPenyakit($connect)
                         <h4>Nama Penyakit</h4>
                         <div class="list-group" id="list-tab" role="tablist">
                             <?php
-                                getPenyakit($connect);
+                            $sql = "SELECT `kode`, `nama_penyakit`, `keterangan` FROM `penyakit`";
+                            $result = $connect->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    // echo "<li><a href=\"?selected={$row['kode']}\" class='dropdown-item'>{$row['nama_penyakit']} </a></li>";
+                                    echo "<a class='list-group-item list-group-item-action btn-outline-primary' id='list-home-list' data-bs-toggle='list' href='?selected={$row['kode']}#{$row['kode']}' role='tab' aria-controls='home'><b>{$row['nama_penyakit']}</b></a>";
+                                }
+                            } else {
+                                echo "Data kosong";
+                            }
                             ?>
 
                             <!-- <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a> -->
@@ -143,8 +126,6 @@ function getPenyakit($connect)
         echo "";
     }
     ?>
-
-
     <!-- End Contact Sectio
 
 <?php include_once "footer.php" ?>
