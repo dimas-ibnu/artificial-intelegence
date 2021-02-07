@@ -4,6 +4,31 @@ include_once "connect_backward.php";
 
 ?>
 
+<?php
+
+function getHasil($connect)
+{
+    $hasil = $_GET['hasil'];
+    $kode_penyakit = $_GET['penyakit'];
+    $sql = "SELECT `nama_penyakit`, `keterangan` FROM `penyakit` WHERE `kode`='{$kode_penyakit}'";
+    $result = $connect->query($sql);
+    $row = $result->fetch_row();
+
+    if ($hasil == "true") {
+        echo "<h4>Gejala {$row[0]} ditemukan dengan Keterangan :</h4>";
+        echo "<div class='text-left'>{$row[1]}</div>";
+        echo "<br><a href='?' class='btn btn-primary'>Konsultasi Lagi</a>";
+    } elseif ($hasil == "false") {
+        echo "<h4>Penyakit {$row[0]} tidak sesuai dengan gejala-gelaja yang anda alami.</h4>";
+        echo "<br><a href='?' class='btn btn-primary'>Konsultasi Lagi</a>";
+    } else {
+        echo "<h5>Silahkan Pilih Salah Satu Penyakit Terlebih Dulu</h5>";
+    }
+}
+
+// var_dump($kode_penyakit);
+?>
+
 <body>
     <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
         <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
@@ -13,23 +38,7 @@ include_once "connect_backward.php";
                     <h2>Backward Chaining</h2>
                     <div class="foward" style="background-color: white; margin: 2   rem; padding: 1rem 2rem; border-radius: 10px">
                         <?php
-                        $hasil = $_GET['hasil'];
-                        $kode_penyakit = $_GET['penyakit'];
-                        $sql = "SELECT `nama_penyakit`, `keterangan` FROM `penyakit` WHERE `kode`='{$kode_penyakit}'";
-                        $result = $connect->query($sql);
-                        $row = $result->fetch_row();
-
-                        if ($hasil == "true") {
-                            echo "<h4>Gejala {$row[0]} ditemukan dengan Keterangan :</h4>";
-                            echo "<div class='text-left'>{$row[1]}</div>";
-                            echo "<br><a href='?' class='btn btn-primary'>Konsultasi Lagi</a>";
-                        } elseif($hasil == "false"){
-                            echo "<h4>Penyakit {$row[0]} tidak sesuai dengan gejala-gelaja yang anda alami.</h4>";
-                            echo "<br><a href='?' class='btn btn-primary'>Konsultasi Lagi</a>";
-                        } else {
-                            echo "<h5>Silahkan Pilih Salah Satu Penyakit Terlebih Dulu</h5>";
-                        }
-                        // var_dump($kode_penyakit);
+                        getHasil($connect);
                         ?>
                     </div>
                 </div>
@@ -126,6 +135,8 @@ include_once "connect_backward.php";
         echo "";
     }
     ?>
+
+
     <!-- End Contact Sectio
 
 <?php include_once "footer.php" ?>
