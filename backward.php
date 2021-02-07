@@ -1,14 +1,16 @@
 <?php
+
+use Phpml\Clustering\FuzzyCMeans;
+
 include_once "header.php";
 include_once "connect_backward.php";
+$hasil = $_GET['hasil'];
 
 ?>
 
 <?php
-
-function getHasil($connect)
+function getHasil($connect, $hasil)
 {
-    $hasil = $_GET['hasil'];
     $kode_penyakit = $_GET['penyakit'];
     $sql = "SELECT `nama_penyakit`, `keterangan` FROM `penyakit` WHERE `kode`='{$kode_penyakit}'";
     $result = $connect->query($sql);
@@ -26,6 +28,22 @@ function getHasil($connect)
     }
 }
 
+function getPenyakit($connect)
+{
+
+    $sql = "SELECT `kode`, `nama_penyakit`, `keterangan` FROM `penyakit`";
+    $result = $connect->query($sql);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            // echo "<li><a href=\"?selected={$row['kode']}\" class='dropdown-item'>{$row['nama_penyakit']} </a></li>";
+            echo "<a class='list-group-item list-group-item-action btn-outline-primary' id='list-home-list' data-bs-toggle='list' href='?selected={$row['kode']}#{$row['kode']}' role='tab' aria-controls='home'><b>{$row['nama_penyakit']}</b></a>";
+        }
+    } else {
+        echo "Data kosong";
+    }
+}
+
 // var_dump($kode_penyakit);
 ?>
 
@@ -38,7 +56,7 @@ function getHasil($connect)
                     <h2>Backward Chaining</h2>
                     <div class="foward" style="background-color: white; margin: 2   rem; padding: 1rem 2rem; border-radius: 10px">
                         <?php
-                        getHasil($connect);
+                        getHasil($connect, $hasil);
                         ?>
                     </div>
                 </div>
@@ -56,17 +74,7 @@ function getHasil($connect)
                         <h4>Nama Penyakit</h4>
                         <div class="list-group" id="list-tab" role="tablist">
                             <?php
-                            $sql = "SELECT `kode`, `nama_penyakit`, `keterangan` FROM `penyakit`";
-                            $result = $connect->query($sql);
-
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    // echo "<li><a href=\"?selected={$row['kode']}\" class='dropdown-item'>{$row['nama_penyakit']} </a></li>";
-                                    echo "<a class='list-group-item list-group-item-action btn-outline-primary' id='list-home-list' data-bs-toggle='list' href='?selected={$row['kode']}#{$row['kode']}' role='tab' aria-controls='home'><b>{$row['nama_penyakit']}</b></a>";
-                                }
-                            } else {
-                                echo "Data kosong";
-                            }
+                                getPenyakit($connect);
                             ?>
 
                             <!-- <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a> -->
