@@ -1,3 +1,6 @@
+<?php
+error_reporting(0);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,9 +40,10 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center" >
+  <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
